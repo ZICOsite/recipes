@@ -8,11 +8,11 @@ import "./assets/styles/main.scss";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <BrowserRouter>
       <PrimeReactProvider>
         <App />
       </PrimeReactProvider>
     </BrowserRouter>
-  </StrictMode>
+  // </StrictMode>
 );

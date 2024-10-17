@@ -1,7 +1,12 @@
 import React from "react";
+import RecipesView from "../views/recipesView/RecipesView";
 
 const HomePage = () => {
-  return <h1>HomePage</h1>;
+  return (
+    <main>
+      <RecipesView />
+    </main>
+  );
 };
 
 export default HomePage;

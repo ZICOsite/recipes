@@ -1,7 +1,12 @@
 import React from "react";
+import CategoriesView from "../views/categoriesView/CategoriesView";
 
 const CategoriesPage = () => {
-  return <h1>CategoriesPage</h1>;
+  return (
+    <main>
+      <CategoriesView />
+    </main>
+  );
 };
 
 export default CategoriesPage;

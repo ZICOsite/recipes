@@ -7,7 +7,7 @@ const pages = [
     name: "Home",
   },
   {
-    path: "/categories",
+    path: "/categories?name=Asian",
     name: "Categories",
   },
 ];

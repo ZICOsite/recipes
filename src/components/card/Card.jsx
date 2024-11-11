@@ -20,7 +20,9 @@ const Card = ({ info, loading }) => {
       {loading && <Skeleton width="100%" height="20px"></Skeleton>}
       {!loading && (
         <h3 className="card__title">
-          <Link className="card__title-link">{info.name}</Link>
+          <Link to={`/recipe/${info.id}`} className="card__title-link">
+            {info.name}
+          </Link>
         </h3>
       )}
       {loading && <Skeleton width="60%" height="20px"></Skeleton>}
@@ -28,7 +30,9 @@ const Card = ({ info, loading }) => {
         <ul className="card__tags">
           {info.tags.map((item) => (
             <li className="card__tags-item" key={item}>
-              <Link className="card__tags-link">{item}</Link>
+              <Link to={`/categories?name=${item}`} className="card__tags-link">
+                {item}
+              </Link>
             </li>
           ))}
         </ul>

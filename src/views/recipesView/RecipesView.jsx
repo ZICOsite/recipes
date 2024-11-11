@@ -28,7 +28,22 @@ const RecipesView = () => {
     setLoading(true);
     try {
       const { data } = await recipesApi.getAllRecipes(
-        `/search?q=${keyword}&limit=12&skip=${offset}&select=name,image,mealType,rating,tags,reviewCount&delay=500`
+        `?limit=12&skip=${offset}&select=name,image,mealType,rating,tags,reviewCount&delay=500`
+      );
+      setRecipes(data.recipes);
+    } catch (error) {
+      console.error("Error:", error);
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getSearchRecipes = async () => {
+    setLoading(true);
+    try {
+      const { data } = await recipesApi.getSearchRecipes(
+        `/search?q=${keyword}&limit=12&select=name,image,mealType,rating,tags,reviewCount&delay=500`
       );
       setRecipes(data.recipes);
       setTotal(data.total);
@@ -42,7 +57,11 @@ const RecipesView = () => {
 
   useEffect(() => {
     getAllRecipes(first);
-  }, [debouncedValue, first]);
+  }, [first]);
+
+  useEffect(() => {
+    getSearchRecipes();
+  }, [debouncedValue]);
 
   return (
     <section className="recipes">

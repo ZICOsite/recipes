@@ -10,6 +10,10 @@ const pages = [
     path: "/categories?name=Asian",
     name: "Categories",
   },
+  {
+    path: "/basket",
+    name: "Cart",
+  },
 ];
 
 const Navbar = () => {

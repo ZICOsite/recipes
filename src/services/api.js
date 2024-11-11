@@ -9,6 +9,12 @@ const recipesApi = {
     },
     getRecipeByTag(url) {
         return axiosInstance.get(url)
+    },
+    getSearchRecipes(url) {
+        return axiosInstance.get(url)
+    },
+    getSingleRecipe(url) {
+        return axiosInstance.get(url)
     }
 }
 

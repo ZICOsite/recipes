@@ -57,7 +57,7 @@ const CategoriesView = () => {
     } else {
       getRecipeByTag("Asian");
     }
-  }, [navigate]);
+  }, [navigate, location.search]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
